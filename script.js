@@ -7,7 +7,6 @@ form.addEventListener("submit", function (e) {
   var searchName = search.split(" ").join("");
 
   document.getElementById("result").innerHTML = "";
-
   fetch("https://api.github.com/users/" + searchName)
     .then((result) => result.json())
     .then((data) => {
@@ -24,5 +23,7 @@ form.addEventListener("submit", function (e) {
     </a>
       `;
     });
+
+  document.querySelector(".input_box").value = "";
   document.getElementById("result").style.marginBottom = "-15%";
 });
